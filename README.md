@@ -1,15 +1,54 @@
-# React + TypeScript + Vite
+# 📝 Notes App — React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Notes App built with **React**, **TypeScript**, and **Vite**. It features hot module replacement (HMR), strict linting, and a scalable structure ideal for rapid development.
 
-Currently, two official plugins are available:
+🧰 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ Powered by Vite for fast development  
+- 🔥 React Fast Refresh  
+- 🧠 Written in TypeScript  
+- 📦 Pre-configured with ESLint  
+- 📝 Easily extendable and customizable  
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
+
+## 🚀 Getting Started
+
+### 📁 Clone the repository
+
+```bash
+git clone https://github.com/your-username/notes-app.git
+cd notes-app
+````
+
+### 📦 Install Dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+### 🧪 Run the Development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The app will be available at `http://localhost:5173/`.
+
+---
+
+## 🧹 Linting & Formatting
+
+This project includes a minimal ESLint setup with TypeScript support.
+
+### 👉 Optional: Enable Type-Aware Linting
+
+To enable stricter type-aware rules, update your `eslint.config.js`:
 
 ```js
 export default tseslint.config([
@@ -17,32 +56,33 @@ export default tseslint.config([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
       ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+      // or for stricter rules
+      // ...tseslint.configs.strictTypeChecked,
+      // Optional stylistic rules
       ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
 ])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 👉 Optional: Add React-Specific ESLint Plugins
+
+Install:
+
+```bash
+npm install --save-dev eslint-plugin-react-x eslint-plugin-react-dom
+```
+
+Then extend your config:
 
 ```js
-// eslint.config.js
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
@@ -51,10 +91,7 @@ export default tseslint.config([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
       reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
@@ -62,8 +99,36 @@ export default tseslint.config([
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
 ])
 ```
+
+---
+
+## 🧪 Scripts
+
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Run development server   |
+| `npm run build`   | Build for production     |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint check         |
+
+---
+
+## 📦 Build
+
+To build for production:
+
+```bash
+npm run build
+```
+
+Then preview the output:
+
+```bash
+npm run preview
+```
+
+---
