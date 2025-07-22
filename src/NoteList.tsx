@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { Badge, Button, Card, CardBody, Col, Form, Row, Stack } from "react-bootstrap";
+import { Badge, Button, Card, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
-import type { Note, Tags } from "./App";
+import type { Tags } from "./App";
 import styles from "./NoteList.module.css"
 
 type SimplifiedNote = {
